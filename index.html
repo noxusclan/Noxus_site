@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOXUS CLAN</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="LOGO_NOXUS_2.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo-container">
+          <img src="LOGO_NOXUS_2.png" alt="NOXUS Logo" class="logo" />
+          <h2>NOXUS CLAN</h2>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#about">Chi siamo</a></li>
+            <li><a href="#player">Players</a></li>
+            <li><a href="#streamer">Streamers</a></li>
+            <li><a href="#sponsor">Partner</a></li>
+            <li><a href="#elite">Élite</a></li>
+            <li><a href="#join">Unisciti</a></li>
+            <li><a href="#rules">Regole</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="Noxus1.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-content">
+        <h1>Benvenuto su <span>NOXUS</span></h1>
+        <p>Nessuna pietà, solo vittorie</p>
+      </div>
+    </section>
+
+    <main>
+      <!-- CHI SIAMO -->
+      <section id="about" class="content">
+        <h2>Chi Siamo?</h2>
+        <p>
+          NOXUS è più di un clan: è una famiglia competitiva, unita dalla
+          passione per il gaming e dalla voglia di crescere insieme.
+          <br />Fondato con l’obiettivo di creare un ambiente ordinato,
+          stimolante e senza tossicità, NOXUS è suddiviso in due categorie
+          principali: Academy e Élite. <br />Offriamo supporto completo ai
+          membri, squad attive ogni giorno, tornei, scrim e supporto grafico per
+          streamer e creator. <br />La nostra filosofia: nessuna pietà, solo
+          vittorie.
+        </p>
+      </section>
+
+      <!-- PLAYER (con carosello JS) -->
+      <section id="player" class="content">
+        <h2>Players</h2>
+        <p>prova testo</p>
+        <div class="nxs-carousel" data-autoplay="5000">
+          <button class="nxs-btn nxs-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="nxs-window">
+            <div class="nxs-track">
+              <figure class="nxs-slide">
+                <a href="https://twitch.tv/player1" target="_blank">
+                  <img src="LOGO_NOXUS_2.png" alt="Player 1" />
+                  <div class="overlay">Player 1</div>
+                </a>
+              </figure>
+              <figure class="nxs-slide">
+                <a href="https://twitch.tv/player2" target="_blank">
+                  <img src="player2.jpg" alt="Player 2" />
+                  <div class="overlay">Player 2</div>
+                </a>
+              </figure>
+              <figure class="nxs-slide">
+                <a href="https://twitch.tv/player3" target="_blank">
+                  <img src="player3.jpg" alt="Player 3" />
+                  <div class="overlay">Player 3</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+          <button class="nxs-btn nxs-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="nxs-dots"></div>
+        </div>
+      </section>
+
+      <!-- STREAMER (cliccabile) -->
+      <section id="streamer" class="content">
+        <h2>Streamers</h2>
+        <p>prova testo</p>
+        <div class="nxs-carousel" data-autoplay="5000">
+          <button class="nxs-btn nxs-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="nxs-window">
+            <div class="nxs-track">
+              <figure class="nxs-slide">
+                <a href="https://www.twitch.tv/simoblue99" target="_blank">
+                  <img src="img/simoblue99.png" alt="Streamer 1" />
+                  <div class="overlay">@SimoBlue99</div>
+                </a>
+              </figure>
+              <figure class="nxs-slide">
+                <a href="https://twitch.tv/streamer2" target="_blank">
+                  <img src="streamer2.jpg" alt="Streamer 2" />
+                  <div class="overlay">@Streamer2</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+          <button class="nxs-btn nxs-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="nxs-dots"></div>
+        </div>
+      </section>
+
+      <!-- SPONSOR (cliccabile) -->
+      <section id="sponsor" class="content">
+        <h2>Partner & Sponsor</h2>
+        <p>prova testo</p>
+        <div class="nxs-carousel" data-autoplay="5700">
+          <button class="nxs-btn nxs-prev">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="nxs-window">
+            <div class="nxs-track">
+              <figure class="nxs-slide">
+                <a href="https://linktr.ee/Medical_pad" target="_blank">
+                  <video autoplay muted loop playsinline>
+                    <source src="img/Dual Sense.mp4" type="video/mp4" />
+                  </video>
+                  <div class="overlay">MedicalPad</div>
+                </a>
+              </figure>
+
+              <figure class="nxs-slide">
+                <a href="https://partner1.com" target="_blank">
+                  <video autoplay muted loop playsinline>
+                    <source src="img/Dual Sense.mp4" type="video/mp4" />
+                  </video>
+                  <div class="overlay">Sponsor 1</div>
+                </a>
+              </figure>
+            </div>
+          </div>
+          <button class="nxs-btn nxs-next">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="nxs-dots"></div>
+        </div>
+      </section>
+
+      <!-- ELITE -->
+      <section id="elite" class="content elite">
+        <div class="elite-container">
+          <div class="elite-text">
+            <h2>ANNUNCIO UFFICIALE – NOXUS ÉLITE</h2>
+            <p>Fratelli NOXUS, è arrivato il momento di alzare il livello!</p>
+            <p>
+              Dal <strong>1° ottobre</strong> si aprono ufficialmente i provini
+              per entrare negli <strong>ÉLITE</strong>.
+            </p>
+            <p>
+              I provini si terranno il <strong>1° di ogni mese</strong>, per
+              team completi o singoli player.
+            </p>
+
+            <h3>Criteri di valutazione</h3>
+            <ul>
+              <li>Discord attivo con logo e tag NOXUS</li>
+              <li>Statistiche competitive (rank cremesi consigliato)</li>
+              <li>Comunicazione chiara e microfono obbligatorio</li>
+              <li>Test di gioco in lobby BR Trio</li>
+              <li>Focus su sinergia, strategia e mentalità</li>
+              <li>
+                3 partite consecutive per valutare resistenza e concentrazione
+              </li>
+            </ul>
+
+            <h3>Esito finale</h3>
+            <ul>
+              <li>Pronto → ingresso in Élite</li>
+              <li>Non pronto → resta in Academy</li>
+              <li>Tossico o irrispettoso → rifiuto immediato</li>
+            </ul>
+
+            <h3>Benefici ÉLITE</h3>
+            <ul>
+              <li>Accesso prioritario a tornei ufficiali</li>
+              <li>
+                Supporto economico per iscrizioni (condivisione vincite 25%)
+              </li>
+              <li>Ruoli, canali e riconoscimento esclusivo</li>
+            </ul>
+          </div>
+
+          <div class="elite-video">
+            <video autoplay muted loop playsinline>
+              <source src="Elite_2.mp4" type="video/mp4" />
+            </video>
+            <p class="final">
+              NOXUS NON PERDONA.<br /><strong
+                >NESSUNA PIETÀ. SOLO VITTORIE.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- RULES -->
+      <section id="rules" class="content">
+        <h2>Regole</h2>
+        <p><strong>
+           <br>No cheat, glitch, flame
+           <br>Rispetto per tutti
+           <br>Avvisa se assente a lungo
+           <br>Tag [NOXUS] obbligatorio in game/live/social
+           <br>Logo della categoria obbligatorio su Discord 
+           <br>Obbligo di restare sempre sul server del clan
+           <br>Puoi giocare con amici esterni, ma solo restando sul server (entrano come ospiti nel loro canale)
+          </strong></p>
+      </section>
+
+      <!-- JOIN -->
+      <section id="join" class="content">
+        <h2>Unisciti al Clan</h2>
+        <p>NOXUS non è solo un clan. È una famiglia.</p>
+        <p>Unisciti al nostro server Discord e inizia il tuo percorso:</p>
+        <a href="https://discord.gg/hgwdjEHWuk" class="btn">Entra su Discord</a>
+      </section>
+
+      <!-- CONTATTI e SOCIAL lasciati come erano -->
+      <section id="contatti">
+        <h2>Contattaci</h2>
+        <form id="contact-form" action="contact.php" method="POST">
+          <input
+            type="email"
+            name="email"
+            placeholder="La tua email"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Scrivi il tuo messaggio"
+            required
+          ></textarea>
+          <button type="submit">Invia</button>
+        </form>
+        <div id="form-status"></div>
+      </section>
+
+      <section id="social" class="social">
+        <h2>Seguici sui Social</h2>
+        <div class="social-icons">
+          <a
+            href="https://www.tiktok.com/@clan_noxus"
+            target="_blank"
+            aria-label="TikTok"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a
+            href="https://www.twitch.tv/noxus_clan"
+            target="_blank"
+            aria-label="Twitch"
+            ><i class="fab fa-twitch"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/_noxus_clan_/"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        #NOXUSÉLITE – Nessuna pietà. Solo vittorie. <br />Created by @marcio96_
+        & @denisbruno28
+      </p>
+    </footer>
+
+    <!-- JS esterno -->
+    <script src="script.js"></script>
+  </body>
+</html>
