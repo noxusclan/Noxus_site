@@ -9,6 +9,15 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
+.logo-container a {
+  text-decoration: none; /* rimuove la sottolineatura */
+  color: #f0f0f0;        /* rende il testo bianco */
+}
+
+.logo-container a:hover {
+  color: #d60000;         /* opzionale: colore al passaggio del mouse */
+}
+
 
 /* HEADER */
 header {
