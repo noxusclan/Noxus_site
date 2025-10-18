@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'noxusclan.info@gmail.com'; // tua email reale Gmail
-        $mail->Password = 'iduf grtj moyk sqpj';          // password app Gmail
+        $mail->Password = 'password app';          // password app Gmail
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
