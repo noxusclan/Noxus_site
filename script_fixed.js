@@ -1,7 +1,9 @@
 // ======================
 // NOXUS CLAN — SCRIPT.JS (versione corretta e commentata in italiano)
 // ======================
+
 document.addEventListener("DOMContentLoaded", () => {
+  
   /* ======================
      CAROUSEL GENERICO (STREAMER / PLAYER / SPONSOR)
      ====================== */
@@ -167,6 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sm.setAttribute("aria-hidden", "true");
     sm.style.display = "none";
   });
+  
   /* ======================
      MODAL ABOUT DEVELOPER (Easter Egg nel footer)
      ====================== */
@@ -204,7 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-
 
   /* ======================
      CHIUSURA MODALI CLIC FUORI

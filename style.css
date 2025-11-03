@@ -112,9 +112,18 @@ header {
   align-items: center;
   gap: 10px;
 }
+
 .logo {
   height: 45px;
   width: 45px;
+  border-radius: 50%; /* 🔥 cerchio perfetto */
+  box-shadow: 0 0 10px rgba(179, 15, 15, 0.5); /* glow rosso */
+  overflow: hidden; /* evita tagli imperfetti */
+  object-fit: cover; /* riempie bene l’area circolare */
+}
+
+body.light-theme .logo {
+  box-shadow: 0 0 10px rgba(179, 15, 15, 0.3);
 }
 
 .header-container {
@@ -2168,50 +2177,7 @@ body.light-theme .staff-card-back p {
     height: 160px;
   }
 }
-/* === JOIN SECTION — NOXUS STYLE UPGRADE === */
-#join h2 {
-  color: var(--accent-strong);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px var(--accent-strong), 0 0 25px rgba(255, 0, 0, 0.5);
-  animation: glowPulse 2.5s infinite alternate ease-in-out;
-}
 
-@keyframes glowPulse {
-  from {
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-  }
-  to {
-    text-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.5);
-  }
-}
-.btn-discord {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: #5865f2;
-  color: #fff;
-  font-weight: 700;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  padding: 14px 28px;
-  box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
-  transition: all 0.3s ease;
-}
-
-.btn-discord i {
-  font-size: 1.4rem;
-  transition: transform 0.3s ease;
-}
-
-.btn-discord:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(88, 101, 242, 0.7), 0 0 50px rgba(88, 101, 242, 0.4);
-}
-
-.btn-discord:hover i {
-  transform: rotate(12deg);
-}
 /* =========================
    ABOUT DEVELOPER MODAL — NOXUS STYLE
    ========================= */
@@ -2233,6 +2199,21 @@ body.light-theme .staff-card-back p {
   border: 2px solid var(--accent);
   box-shadow: 0 0 20px var(--accent-strong);
   text-align: center;
+}
+
+body.light-theme .dev-modal {
+  background: radial-gradient(circle at center, #ffffff 0%, #f0f0f0 100%);
+  color: #111;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 20px rgba(179, 15, 15, 0.3);
+}
+
+body.light-theme .dev-modal h3 {
+  color: var(--accent);
+}
+
+body.light-theme .dev-modal p {
+  color: #333;
 }
 
 .dev-avatar {
@@ -2265,6 +2246,7 @@ body.light-theme .staff-card-back p {
   transform: scale(1.2);
   text-shadow: 0 0 10px var(--accent), 0 0 25px var(--accent-strong);
 }
+
 /* === NOXUS CUSTOM CURSOR (Mirino Luminoso) === */
 body {
   cursor: none; /* nasconde il cursore di default */
@@ -2328,4 +2310,400 @@ body {
     transform: translate(-50%, -50%) scale(2);
     opacity: 0;
   }
+}
+
+#join {
+  text-align: center;
+  background: var(--surface);
+  border-top: 3px solid var(--accent);
+  border-bottom: 3px solid var(--accent);
+  padding: 100px 20px; /* aumenta lo spazio */
+  margin: 80px auto;
+  border-radius: 12px;
+  box-shadow: 0 0 25px var(--panel-shadow);
+}
+
+#join h2 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+#join p {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 30px;
+}
+
+#join .btn {
+  font-size: 1.2rem;
+  padding: 15px 35px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+/* =========================================================
+   NOXUS CLAN — JOIN SECTION (SOFT ENERGY EDITION 2025)
+   ========================================================= */
+#join {
+  position: relative;
+  text-align: center;
+  background: radial-gradient(circle at 30% 30%, #050505 0%, #000 100%);
+  border: 2px solid rgba(255, 0, 0, 0.4);
+  border-radius: 16px;
+  padding: 120px 40px;
+  margin: 120px auto;
+  max-width: 950px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2),
+    inset 0 0 25px rgba(255, 0, 0, 0.15);
+  animation: fadeInJoin 1.2s ease forwards;
+}
+
+/* --- Luce fluida Soft Energy --- */
+#join::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.15) 0%,
+    rgba(88, 101, 242, 0.12) 30%,
+    transparent 70%
+  );
+  animation: joinGlowShift 10s ease-in-out infinite alternate;
+  z-index: 0;
+  filter: blur(60px);
+}
+@keyframes joinGlowShift {
+  0% {
+    transform: translate(0%, 0%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(25%, 25%) scale(1.3);
+    opacity: 0.9;
+  }
+}
+
+/* --- Titolo --- */
+#join h2 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.6), 0 0 25px rgba(255, 0, 0, 0.4);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 25px;
+  transition: text-shadow 0.4s ease;
+}
+#join h2:hover {
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.9), 0 0 40px rgba(255, 0, 0, 0.6);
+}
+
+/* --- Testo --- */
+#join p {
+  font-size: 1.25rem;
+  color: #e6e6e6;
+  max-width: 720px;
+  margin: 0 auto 55px;
+  line-height: 1.7;
+  z-index: 2;
+  position: relative;
+}
+#join p strong {
+  color: #ff4040;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+/* --- Pulsante Discord --- */
+.discord-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  background: linear-gradient(135deg, #5865f2 0%, #404eed 100%);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 18px 50px;
+  border-radius: 60px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  overflow: hidden;
+  z-index: 2;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(88, 101, 242, 0.6), 0 0 50px rgba(255, 0, 0, 0.3);
+}
+.discord-btn i {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease;
+}
+
+/* Glow rosso/blu sotto */
+.discord-btn::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: 60px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 0.35),
+    rgba(88, 101, 242, 0.25),
+    transparent 70%
+  );
+  filter: blur(25px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+/* Scia luminosa */
+.discord-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: 0.6s;
+  z-index: 3;
+}
+.discord-btn:hover::after {
+  left: 130%;
+}
+
+/* Hover */
+.discord-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 35px rgba(88, 101, 242, 1), 0 0 70px rgba(255, 0, 0, 0.5);
+}
+.discord-btn:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+
+/* --- Animazione entrata --- */
+@keyframes fadeInJoin {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Tema chiaro --- */
+body.light-theme #join {
+  background: radial-gradient(circle at 30% 30%, #f8f8f8 0%, #e6e6e6 100%);
+  border: 2px solid rgba(179, 15, 15, 0.4);
+  box-shadow: 0 0 25px rgba(179, 15, 15, 0.1);
+}
+body.light-theme #join h2 {
+  color: #111;
+  text-shadow: 0 0 8px rgba(179, 15, 15, 0.4);
+}
+body.light-theme #join p {
+  color: #222;
+}
+body.light-theme #join p strong {
+  color: #b30f0f;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  #join {
+    padding: 80px 25px;
+  }
+  #join h2 {
+    font-size: 2.6rem;
+  }
+  #join p {
+    font-size: 1.05rem;
+  }
+  .discord-btn {
+    font-size: 1.1rem;
+    padding: 15px 36px;
+  }
+}
+/* =========================
+   BACHECA EVENTI — Stile Instagram Grid
+   ========================= */
+.bacheca-section {
+  text-align: center;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 80px 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.35), 0 0 60px rgba(214, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.bacheca-section:hover {
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.45), 0 0 70px rgba(214, 0, 0, 0.25);
+}
+
+.bacheca-section h2 {
+  color: var(--accent);
+  text-transform: uppercase;
+  border-left: 5px solid var(--accent);
+  padding-left: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.bacheca-section p {
+  color: var(--muted);
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.bacheca-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.evento {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.evento img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.evento:hover img {
+  transform: scale(1.05);
+}
+
+.evento-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), transparent);
+  color: #fff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.evento:hover .evento-overlay {
+  opacity: 1;
+}
+
+.evento-overlay h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+.evento-overlay p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  color: #eee;
+}
+
+.evento:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px var(--accent-strong), 0 0 40px rgba(255, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .bacheca-section {
+    padding: 60px 15px;
+  }
+  .evento-overlay h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* =========================
+   FIX BACHECA EVENTI - VERSIONE MOBILE
+   ========================= */
+@media (max-width: 768px) {
+  .bacheca-section {
+    padding: 40px 10px; /* meno spazio interno */
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+  }
+
+  .bacheca-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .bacheca-section p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .bacheca-grid {
+    gap: 15px;
+  }
+
+  .evento {
+    border-radius: 10px;
+  }
+
+  .evento img {
+    height: 220px; /* riduce l’altezza dell’immagine */
+    object-fit: cover;
+  }
+
+  .evento-overlay {
+    padding: 10px;
+  }
+
+  .evento-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .evento-overlay p {
+    font-size: 0.85rem;
+  }
+}
+.btn-iscriviti {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.btn-iscriviti:hover {
+  background: #ff3c3c;
+  transform: scale(1.05);
 }
