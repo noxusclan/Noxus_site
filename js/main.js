@@ -78,4 +78,54 @@ document.addEventListener("DOMContentLoaded", () => {
       item.classList.add("active");
     });
   });
+
+  // ==========================================
+  // 4. COOKIE BANNER & GOOGLE ANALYTICS
+  // ==========================================
+  const cookieBanner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("accept-cookies");
+  const declineBtn = document.getElementById("decline-cookies");
+
+  if (cookieBanner && acceptBtn && declineBtn) {
+    // Controlla la scelta precedente
+    let cookieChoice = localStorage.getItem("cookieConsent");
+
+    if (!cookieChoice) {
+      // Mai scelto, mostra il banner
+      cookieBanner.style.display = "flex";
+    } else if (cookieChoice === "accepted") {
+      // Ha già accettato in passato, avvia Analytics
+      loadGoogleAnalytics();
+    }
+
+    // Se clicca Accetta
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      cookieBanner.style.display = "none";
+      loadGoogleAnalytics(); // Fa partire lo script!
+    });
+
+    // Se clicca Rifiuta
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "declined");
+      cookieBanner.style.display = "none"; // Nasconde e basta
+    });
+  }
+
+  // Funzione che inietta Analytics solo quando autorizzato
+  function loadGoogleAnalytics() {
+    let script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-N61GF4YSNV";
+    document.head.appendChild(script1);
+
+    let script2 = document.createElement("script");
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N61GF4YSNV');
+    `;
+    document.head.appendChild(script2);
+  }
 });
