@@ -53,6 +53,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -128,7 +130,7 @@
     <section id="about" class="section-padding bg-alt">
       <div class="container">
         <div class="about-wrapper">
-          <div class="about-text">
+          <div class="about-text" data-aos="fade-right">
             <div
               class="section-header"
               style="text-align: left; margin-bottom: 30px"
@@ -173,7 +175,7 @@
             </div>
           </div>
 
-          <div class="about-image">
+          <div class="about-image" data-aos="fade-left">
             <img
               src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=800&auto=format&fit=crop"
               alt="Noxus Setup"
@@ -186,14 +188,14 @@
 
     <section id="staff" class="section-padding">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2>IL NOSTRO <span>STAFF</span></h2>
           <p>
             Le menti dietro le quinte. Il cuore pulsante dell'organizzazione.
           </p>
         </div>
 
-        <div class="staff-carousel">
+        <div class="staff-carousel" data-aos="fade-up" data-aos-delay="100">
           <div class="staff-card">
             <img
               src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=200&auto=format&fit=crop"
@@ -339,14 +341,14 @@
 
     <section id="roster" class="section-padding bg-alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2>IL NOSTRO <span>ROSTER</span></h2>
           <p>I dominatori della Warzone. Nessuna pietà, nessun gulag.</p>
         </div>
 
         <div class="roster-category">
-          <h3 class="roster-subtitle">ÉLITE</h3>
-          <div class="roster-carousel">
+          <h3 class="roster-subtitle" data-aos="fade-right">ÉLITE</h3>
+          <div class="roster-carousel" data-aos="fade-up" data-aos-delay="100">
             <div class="player-card">
               <div class="player-img-wrapper">
                 <img
@@ -355,6 +357,12 @@
                   class="player-img"
                 />
                 <span class="player-role">IGL (In-Game Leader)</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> Kar98k</div>
+                  <div class="stat-item"><span>K/D:</span> 3.85</div>
+                  <div class="stat-item"><span>Stile:</span> Tattico</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>GHOST</h3>
@@ -375,6 +383,12 @@
                   class="player-img"
                 />
                 <span class="player-role">Slayer</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> Superi 46</div>
+                  <div class="stat-item"><span>K/D:</span> 4.10</div>
+                  <div class="stat-item"><span>Stile:</span> Aggressivo</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>VIPER</h3>
@@ -395,6 +409,12 @@
                   class="player-img"
                 />
                 <span class="player-role">Support</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> MCW</div>
+                  <div class="stat-item"><span>K/D:</span> 3.20</div>
+                  <div class="stat-item"><span>Stile:</span> Flanker</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>REAPER</h3>
@@ -416,6 +436,12 @@
                   style="filter: grayscale(30%) hue-rotate(90deg)"
                 />
                 <span class="player-role">Fragger</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> Striker</div>
+                  <div class="stat-item"><span>K/D:</span> 3.90</div>
+                  <div class="stat-item"><span>Stile:</span> Pusher</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>VENOM</h3>
@@ -437,6 +463,12 @@
                   style="filter: grayscale(30%) hue-rotate(180deg)"
                 />
                 <span class="player-role">Anchor</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> DG-58 LSW</div>
+                  <div class="stat-item"><span>K/D:</span> 2.95</div>
+                  <div class="stat-item"><span>Stile:</span> Difensivo</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>TITAN</h3>
@@ -452,8 +484,10 @@
         </div>
 
         <div class="roster-category mt-5">
-          <h3 class="roster-subtitle academy-title">ACADEMY</h3>
-          <div class="roster-carousel">
+          <h3 class="roster-subtitle academy-title" data-aos="fade-right">
+            ACADEMY
+          </h3>
+          <div class="roster-carousel" data-aos="fade-up" data-aos-delay="100">
             <div class="player-card academy-card">
               <div class="player-img-wrapper">
                 <img
@@ -462,6 +496,12 @@
                   class="player-img"
                 />
                 <span class="player-role">Flex</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> HRM-9</div>
+                  <div class="stat-item"><span>K/D:</span> 2.80</div>
+                  <div class="stat-item"><span>Stile:</span> Flessibile</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>STRIKER</h3>
@@ -481,6 +521,14 @@
                   class="player-img"
                 />
                 <span class="player-role">Sniper</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> KATT-AMR</div>
+                  <div class="stat-item"><span>K/D:</span> 3.10</div>
+                  <div class="stat-item">
+                    <span>Stile:</span> Supporto a lungo
+                  </div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>HAWK</h3>
@@ -501,6 +549,12 @@
                   style="filter: grayscale(30%) hue-rotate(45deg)"
                 />
                 <span class="player-role">Support</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> Pulemyot 762</div>
+                  <div class="stat-item"><span>K/D:</span> 2.50</div>
+                  <div class="stat-item"><span>Stile:</span> Tattico</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>ECHO</h3>
@@ -521,6 +575,12 @@
                   style="filter: grayscale(30%) hue-rotate(220deg)"
                 />
                 <span class="player-role">Slayer</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> WSP Swarm</div>
+                  <div class="stat-item"><span>K/D:</span> 3.30</div>
+                  <div class="stat-item"><span>Stile:</span> Assalto</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>RAZOR</h3>
@@ -541,6 +601,12 @@
                   style="filter: grayscale(30%) hue-rotate(120deg)"
                 />
                 <span class="player-role">IGL</span>
+
+                <div class="player-stats-overlay">
+                  <div class="stat-item"><span>Arma:</span> Holger 556</div>
+                  <div class="stat-item"><span>K/D:</span> 2.75</div>
+                  <div class="stat-item"><span>Stile:</span> Leader</div>
+                </div>
               </div>
               <div class="player-info">
                 <h3>NEXUS</h3>
@@ -558,14 +624,14 @@
 
     <section id="creators" class="section-padding">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2>CONTENT <span>CREATOR</span></h2>
           <p>
             Le voci e i volti della nostra community. Segui le loro dirette.
           </p>
         </div>
 
-        <div class="creator-accordion">
+        <div class="creator-accordion" data-aos="fade-up" data-aos-delay="100">
           <div class="acc-item active">
             <img
               src="https://images.unsplash.com/photo-1561053720-76cd73ff22c3?q=80&w=800&auto=format&fit=crop"
@@ -699,12 +765,12 @@
 
     <section id="palmares" class="section-padding bg-alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2>IL NOSTRO <span>PALMARÈS</span></h2>
           <p>La bacheca è pronta. La storia sta per essere scritta.</p>
         </div>
 
-        <div class="palmares-placeholder">
+        <div class="palmares-placeholder" data-aos="zoom-in">
           <div class="placeholder-content">
             <i class="fas fa-trophy trophy-icon"></i>
             <h3>STIAMO ARRIVANDO</h3>
@@ -719,13 +785,17 @@
 
     <section id="partners" class="section-padding">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-aos="fade-up">
           <h2>I NOSTRI <span>PARTNERS</span></h2>
           <p>Le realtà che supportano il progetto NOXUS.</p>
         </div>
 
         <div class="partners-grid">
-          <div class="partner-item main-partner">
+          <div
+            class="partner-item main-partner"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <a href="https://www.aresportsgaming.it/" target="_blank">
               <img
                 src="assets/img/logo_ar_esports.webp"
@@ -737,7 +807,7 @@
             <div class="partner-label">Main Partner</div>
           </div>
 
-          <div class="partner-item">
+          <div class="partner-item" data-aos="fade-up" data-aos-delay="100">
             <a href="https://www.systemcod.it/" target="_blank">
               <img
                 src="assets/img/System.webp"
@@ -748,7 +818,7 @@
             </a>
           </div>
 
-          <div class="partner-item">
+          <div class="partner-item" data-aos="fade-up" data-aos-delay="200">
             <a href="https://discord.gg/mmMYpcq35b" target="_blank">
               <img
                 src="assets/img/masciarepair.webp"
@@ -759,7 +829,7 @@
             </a>
           </div>
 
-          <div class="partner-item">
+          <div class="partner-item" data-aos="fade-up" data-aos-delay="300">
             <a href="https://linktr.ee/Medical_pad" target="_blank">
               <img
                 src="assets/img/medicalpad.webp"
@@ -775,7 +845,7 @@
 
     <section id="join" class="section-padding bg-join">
       <div class="container">
-        <div class="join-card">
+        <div class="join-card" data-aos="zoom-in" data-aos-duration="1000">
           <div class="join-content">
             <h2>ENTRA NEI <span>NOXUS</span></h2>
             <p>
@@ -842,6 +912,8 @@
         <button id="decline-cookies" class="btn-decline">Rifiuta</button>
       </div>
     </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script src="js/main.js"></script>
   </body>

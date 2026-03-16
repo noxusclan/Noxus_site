@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // ==========================================
+  // INIZIALIZZA LE ANIMAZIONI AOS
+  // ==========================================
+  AOS.init({
+    duration: 800, // Durata animazione in millisecondi
+    once: true, // Si anima solo la prima volta che scorri in giù
+    offset: 100, // Distanza di attivazione prima che l'elemento compaia
+  });
+
+  // ==========================================
   // 1. MENU MOBILE (Gestione Hamburger)
   // ==========================================
   const mobileToggle = document.querySelector(".mobile-toggle");
