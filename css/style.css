@@ -27,6 +27,9 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Questa riga è la magia che ferma lo scorrimento prima della barra! */
+  scrollbar-width: thin; /* (Inizia a preparare la scrollbar per Firefox) */
+  scrollbar-color: var(--noxus-red) var(--bg-dark);
 }
 body {
   font-family: var(--font-text);
@@ -1149,7 +1152,26 @@ ul {
 }
 
 @media (max-width: 480px) {
+  /* Fa riapparire il tasto Candidati */
   .btn-join-nav {
+    display: inline-block !important;
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Rimpicciolisce un po' il tasto Discord per fare spazio */
+  .btn-discord {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Avvicina i bottoni tra loro */
+  .nav-actions {
+    gap: 8px;
+  }
+
+  /* Nasconde la scritta "NOXUS" testuale su mobile (rimane il logo) per liberare spazio */
+  .nav-brand {
     display: none;
   }
 }
@@ -1283,4 +1305,23 @@ ul {
 }
 .stat-item:nth-child(3) {
   transition-delay: 0.3s;
+}
+/* --- SCROLLBAR PERSONALIZZATA DA GAMING --- */
+::-webkit-scrollbar {
+  width: 10px; /* Larghezza della barra */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark); /* Sfondo nerissimo */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--noxus-red); /* Il cursore diventa rosso Noxus */
+  border-radius: 5px; /* Arrotonda i bordi */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(
+    --noxus-red-glow
+  ); /* Si illumina quando ci passi sopra col mouse */
 }
