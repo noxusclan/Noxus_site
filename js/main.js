@@ -137,4 +137,25 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(script2);
   }
+
+  // ==========================================
+  // 5. REGOLAMENTO TABS LOGIC
+  // ==========================================
+  const tabBtns = document.querySelectorAll(".tab-btn");
+  const tabPanes = document.querySelectorAll(".tab-pane");
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      // Rimuovi active da tutti i bottoni
+      tabBtns.forEach((b) => b.classList.remove("active"));
+      // Rimuovi active da tutti i pannelli
+      tabPanes.forEach((p) => p.classList.remove("active"));
+
+      // Aggiungi active al bottone cliccato
+      btn.classList.add("active");
+      // Mostra il pannello corrispondente
+      const targetId = btn.getAttribute("data-tab");
+      document.getElementById(targetId).classList.add("active");
+    });
+  });
 });
