@@ -25,12 +25,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Fissato il padding-top a 80px per far fermare la barra perfettamente sul titolo */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
   scrollbar-width: thin;
   scrollbar-color: var(--noxus-red) var(--bg-dark);
 }
+
 body {
   font-family: var(--font-text);
   background-color: var(--bg-dark);
@@ -71,8 +74,9 @@ ul {
    CLASSI GLOBALI PER LE SEZIONI
    ========================= */
 .section-padding {
-  padding: 80px 0;
+  padding: 70px 0;
 }
+
 .section-header {
   text-align: center;
   margin-bottom: 60px;
@@ -375,7 +379,7 @@ ul {
 }
 
 /* =========================
-   STAFF SECTION (CAROSELLO)
+   STAFF SECTION (CAROSELLO - CARD A STRATI)
    ========================= */
 .staff-carousel {
   display: flex;
@@ -383,6 +387,8 @@ ul {
   overflow-x: auto;
   padding-bottom: 20px;
   scroll-snap-type: x mandatory;
+  /* STRETCH assicura che tutte le box nere finiscano allineate in basso */
+  align-items: stretch;
 }
 .staff-carousel::-webkit-scrollbar {
   height: 8px;
@@ -395,42 +401,68 @@ ul {
   background: var(--noxus-red);
   border-radius: 10px;
 }
+
 .staff-card {
-  flex: 0 0 260px;
+  flex: 0 0 300px;
   scroll-snap-align: start;
   background-color: var(--bg-surface);
-  padding: 30px 20px;
   border-radius: 8px;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.05);
   transition: var(--transition);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .staff-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-color: var(--noxus-red);
+  box-shadow: 0 10px 30px rgba(214, 0, 0, 0.15);
 }
+
+.staff-img-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Impone una griglia fissa perfetta per tutte le foto */
+  overflow: hidden;
+  border-bottom: 3px solid var(--noxus-red);
+  background-color: #0a0a0c;
+}
+
 .staff-img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid var(--noxus-red);
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Taglia l'eccedenza senza schiacciare le teste! */
+  object-position: center top;
+  transition: transform 0.5s ease;
 }
+
+.staff-card:hover .staff-img {
+  transform: scale(1.05);
+}
+
+.staff-info {
+  padding: 15px 10px; /* Ridotto al minimo sindacale */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Raggruppa tutto insieme vicinissimo */
+  flex-grow: 1;
+}
+
 .staff-card h4 {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
-  margin-bottom: 5px;
+  font-size: 1.3rem;
+  margin-bottom: 0px; /* Azzerato per compattare */
   letter-spacing: 1px;
 }
 .staff-role {
   display: block;
   color: var(--text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  font-size: 0.8rem;
+  margin-bottom: 6px; /* Ridottissimo */
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 1.2;
 }
 .staff-socials {
   display: flex;
@@ -1388,4 +1420,152 @@ ul {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--noxus-red-glow);
+}
+
+/* =========================
+   WIDGET POP-UP MERCH
+   ========================= */
+.merch-widget {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--bg-surface);
+  border: 2px solid var(--noxus-red);
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  z-index: 9999;
+  transition:
+    max-width 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+    background-color 0.3s ease;
+  max-width: 56px;
+  min-height: 56px;
+  overflow: hidden;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 0 0 0 rgba(214, 0, 0, 0.7);
+  animation: pulse-merch 2s infinite;
+}
+
+@keyframes pulse-merch {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(214, 0, 0, 0.7),
+      0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  70% {
+    box-shadow:
+      0 0 0 10px rgba(214, 0, 0, 0),
+      0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(214, 0, 0, 0),
+      0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.merch-widget:hover,
+.merch-widget:focus {
+  max-width: 340px;
+  background-color: #1a1a20;
+  animation: none;
+  box-shadow: 0 10px 30px rgba(214, 0, 0, 0.3);
+}
+
+.merch-widget-icon {
+  min-width: 36px;
+  height: 36px;
+  background-color: var(--noxus-red);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-right: 15px;
+  transition: transform 0.5s ease;
+  flex-shrink: 0;
+}
+
+.merch-widget:hover .merch-widget-icon,
+.merch-widget:focus .merch-widget-icon {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+.merch-widget-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  transition-delay: 0s;
+  padding-right: 10px;
+}
+
+.merch-widget:hover .merch-widget-info,
+.merch-widget:focus .merch-widget-info {
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+.merch-title {
+  font-family: var(--font-heading);
+  color: var(--text-main);
+  font-size: 1.1rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.merch-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  white-space: normal;
+  line-height: 1.3;
+}
+
+.merch-btn {
+  background-color: var(--noxus-red);
+  color: white;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.merch-btn:hover {
+  background-color: white;
+  color: var(--noxus-red);
+}
+
+@media (max-width: 768px) {
+  .merch-widget {
+    bottom: 20px;
+    right: 20px;
+    border-radius: 30px;
+    min-height: 50px;
+    max-width: 50px;
+  }
+  .merch-widget-icon {
+    min-width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  .merch-widget:hover,
+  .merch-widget:focus,
+  .merch-widget:active {
+    max-width: 290px;
+  }
+  .merch-title {
+    font-size: 1rem;
+  }
 }
