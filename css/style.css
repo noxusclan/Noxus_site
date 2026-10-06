@@ -1569,3 +1569,40 @@ ul {
     font-size: 1rem;
   }
 }
+/* =========================
+   PAGINA ROSTER DEDICATA
+   ========================= */
+.page-header {
+  padding: 160px 0 60px;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 12, 0.95) 0%, var(--bg-alt) 100%),
+    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200")
+      no-repeat center/cover;
+  text-align: center;
+  border-bottom: 1px solid rgba(214, 0, 0, 0.2);
+}
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+.page-header h1 span {
+  color: var(--noxus-red);
+}
+.page-header p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+}
+
+/* La Griglia Roster per allineare tutto su più righe */
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+.roster-grid .player-card {
+  width: 100%;
+}
